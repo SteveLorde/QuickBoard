@@ -6,23 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <script type="module" src="main.js"></script>
+      <script type="module" src="DrawingCanvas.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-amber-400">
+  <body class="bg-white">
 
     <section class="flex flex-col items-center">
 
         <!--Canvas-->
-        <div class="flex flex-col items-center">
-            <canvas id="DrawingCanvas" height="" width=""></canvas>
+        <div class="">
+            <canvas class="border-2 border-black" id="DrawingCanvas"></canvas>
         </div>
 
         <!--ToolsBar-->
-        <div class="flex flex-col w-[100%] items-center bg-red-400">
-            <ul>
-                <li><button>Color Picker</button></li>
-                <li><button>Pen</button></li>
-                <li><button>Eraser</button></li>
+        <div class="w-[100%] bg-red-400">
+            <ul class="flex flex-row justify-center gap-6">
+                <li><button id="ColorPickerButton">Color Picker</button></li>
+                <li><button id="PenButton">Pen</button></li>
+                <li><button id="EraserButton">Eraser</button></li>
             </ul>
         </div>
 
