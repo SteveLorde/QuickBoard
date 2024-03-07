@@ -6,25 +6,45 @@ const colorPickerButton = document.getElementById('ColorPickerButton');
 const penButton = document.getElementById('PenButton');
 const eraserButton = document.getElementById('EraserButton');
 
+
+
+//Canvas Display, Size and Window Resizing Properties
+//--------------------------------
+SetCanvasToWindowSize();
+window.addEventListener('resize', ResizeCanvas);
+
+canvasContext.imageSmoothingEnabled = true
+
+function SetCanvasToWindowSize() {
+    canvas.height = 500;
+    canvas.width = window.innerWidth;
+}
+
+function ResizeCanvas() {
+
+}
+
+//-------------------------------
+
+//Drawing
+//-------
+let isDrawing = false;
+
 penButton.addEventListener('click', ChangeToPen)
 eraserButton.addEventListener('click', ChangeToEraser)
-
-SetCanvasToWindowSize();
-//window.addEventListener('resize', SetCanvasToWindowSize);
 
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseout", stopDrawing);
 
-let isDrawing = false;
 
-canvasContext.strokeStyle = 'rgb(0,90,255)'
+canvasContext.strokeStyle = 'black'
 canvasContext.lineWidth = 8
 canvasContext.lineJoin = 'round'
 canvasContext.lineCap = 'round'
 
-canvasContext.imageSmoothingEnabled = true
+
 
 function ChangeToEraser() {
     canvasContext.strokeStyle = '#ffffff'
@@ -53,10 +73,7 @@ function stopDrawing() {
     canvasContext.closePath();
 }
 
-function SetCanvasToWindowSize() {
-    canvas.height = 500;
-    canvas.width = window.innerWidth;
-}
+
 
 function ChangeColor() {
 
