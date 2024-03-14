@@ -5,35 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" src="main.js"></script>
       <script type="module" src="DrawingCanvas.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-white">
+  <body class="bg-white overflow-hidden">
 
-    <section class="flex flex-col items-center">
-
-        <!--Canvas-->
+    <section class="">
         <div class="">
-            <canvas class="border-2 border-black" id="DrawingCanvas"></canvas>
-        </div>
+            <!--Canvas-->
+            <canvas class="Canvas z-0 border-2 border-black" id="DrawingCanvas"></canvas>
+            <!--ToolsBar-->
+            <div class="fixed bottom-0 w-[100%] z-10 select-none">
+                <div class="Toolbar-Top">
+                    <button id="ToolbarToggle"></button>
+                </div>
+                <div class="Toolbar-Bottom">
+                    <ul class="flex flex-row items-center justify-center p-4 gap-12">
+                        <li><button class="ToolbarButton " id="ColorPickerButton">
+                            <img class="w-[100px]" src="/UI_Icons/ColorPickerButtonIcon.svg" alt="ColorPicker"/>
+                        </button></li>
+                        <li><button class="ToolbarButton" id="PenButton">
+                            <img class="w-[100px]"  src="/UI_Icons/PenButtonIcon.svg" alt="Pen" />
+                        </button></li>
+                        <li><button class="ToolbarButton" id="EraserButton">
+                            <img class="w-[100px]"  src="/UI_Icons/EraserButtonIcon.svg" alt="Eraser" />
+                        </button></li>
+                    </ul>
 
-        <!--ToolsBar-->
-        <div class="w-[100%] bg-red-400">
-            <ul class="flex flex-row justify-center gap-12">
-                <li><button id="ColorPickerButton">
-                    <img src="public/UI_Icons/ColorPickerButtonIcon.svg" alt="ColorPicker"/>
-                </button></li>
-                <li><button id="PenButton">
-                    <img src="public/UI_Icons/PenButtonIcon.svg" alt="Pen" />
-                </button></li>
-                <li><button id="EraserButton">
-                    <img src="public/UI_Icons/EraserButtonIcon.svg" alt="Eraser" />
-                </button></li>
-            </ul>
+                </div>
+            </div>
         </div>
 
     </section>
-
   </body>
 </html>

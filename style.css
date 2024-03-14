@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.Canvas {
+    cursor: url("public/UI_Icons/Drawing_Cursor_Small.png") 8 9, auto;
+}
+.ToolbarButton {
+    border-radius: 100%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.ToolbarButton:hover {
+    box-shadow: 0 0 10px 5px rgb(0, 157, 255);
+}
+
+.Toolbar-Top {
+    background-image: url("public/UI_Icons/ToolbarContainer copy.png");
+    background-size: cover;
+}
+
+.Toolbar-Bottom {
+    background-image: url("public/UI_Icons/ToolbarContainer.png");
+    background-size: cover;
+}
+
