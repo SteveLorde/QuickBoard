@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
       <script type="module" src="DrawingCanvas.js"></script>
+      <script type="module" src="Toolbar.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-white overflow-hidden">
@@ -16,11 +17,14 @@
             <canvas class="Canvas z-0 border-2 border-black" id="DrawingCanvas"></canvas>
             <!--ToolsBar-->
             <div class="fixed bottom-0 w-[100%] z-10 select-none">
-                <div class="Toolbar-Top">
+                <div class="hidden Toolbar-Top">
                     <button id="ToolbarToggle"></button>
                 </div>
-                <div class="Toolbar-Bottom">
-                    <ul class="flex flex-row items-center justify-center p-4 gap-12">
+                <div class="Toolbar-Bottom gap-12 p-6 flex flex-row items-center justify-center">
+                    <div>
+                        <button id="ClearWhiteBoardButton">Clear</button>
+                    </div>
+                    <ul class="flex flex-row items-center justify-center gap-12">
                         <li><button class="ToolbarButton " id="ColorPickerButton">
                             <img class="w-[100px]" src="/UI_Icons/ColorPickerButtonIcon.svg" alt="ColorPicker"/>
                         </button></li>
@@ -31,7 +35,9 @@
                             <img class="w-[100px]"  src="/UI_Icons/EraserButtonIcon.svg" alt="Eraser" />
                         </button></li>
                     </ul>
-
+                    <div>
+                        <button>test</button>
+                    </div>
                 </div>
             </div>
         </div>
