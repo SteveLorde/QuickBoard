@@ -9,20 +9,44 @@
       <script type="module" src="Toolbar.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-white overflow-hidden">
+  <body id="Body" class="bg-white overflow-hidden">
 
-    <section class="">
-        <div class="">
+    <section>
+        <div>
+
+
+
+            <!--Quit Button--->
+            <button id="QuitButton">X</button>
+
             <!--Canvas-->
             <canvas class="Canvas z-0 border-2 border-black" id="DrawingCanvas"></canvas>
+
+
+
             <!--ToolsBar-->
             <div class="fixed bottom-0 w-[100%] z-10 select-none">
+
+                <!--Colors Swatch--->
+                <div class="ColorSwatchContainer">
+                    <div id="ColorSwatch">
+                        <ul class="flex flex-row items-center justify-center p-6 gap-4">
+                            <li><button id="BlackColor" class="border-0 rounded-3xl p-3 bg-black" ></button></li>
+                            <li><button id="RedColor" class="border-0 rounded-3xl  p-3  bg-red-700"></button></li>
+                            <li><button id="BlueColor" class="border-0 rounded-3xl  p-3  bg-blue-700"></button></li>
+                            <li><button id="GreenColor" class="border-0 rounded-3xl  p-3  bg-green-700"></button></li>
+                        </ul>
+                    </div>
+                </div>
+
+
                 <div class="hidden Toolbar-Top">
                     <button id="ToolbarToggle"></button>
                 </div>
-                <div class="Toolbar-Bottom gap-12 p-6 flex flex-row items-center justify-center">
+
+                <div id="ToolbarBottom" class="Toolbar-Bottom gap-12 p-6 flex flex-row items-center justify-center">
                     <div>
-                        <button id="ClearWhiteBoardButton">Clear</button>
+                        <button id="ClearWhiteBoardButton" class="ToolbarFlatButton">Clear</button>
                     </div>
                     <ul class="flex flex-row items-center justify-center gap-12">
                         <li><button class="ToolbarButton " id="ColorPickerButton">
@@ -36,9 +60,10 @@
                         </button></li>
                     </ul>
                     <div>
-                        <button>test</button>
+                        <button></button>
                     </div>
                 </div>
+
             </div>
         </div>
 

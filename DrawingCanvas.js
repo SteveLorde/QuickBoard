@@ -9,7 +9,7 @@ window.addEventListener('resize', ResizeCanvas);
 canvasContext.imageSmoothingEnabled = true
 
 function SetCanvasToWindowSize() {
-    canvas.height = 500;
+    canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 }
 
@@ -40,8 +40,6 @@ export function ClearCanvas() {
     canvasContext.clearRect(0,0,canvas.width,canvas.height)
 }
 
-
-
 export function ChangeToEraser() {
     canvasContext.strokeStyle = '#ffffff'
 }
@@ -52,6 +50,7 @@ export function ChangeToPen() {
 
 
 function startDrawing(event) {
+    event.preventDefault()
     isDrawing = true;
     canvasContext.beginPath();
     canvasContext.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
@@ -69,8 +68,6 @@ function stopDrawing() {
     canvasContext.closePath();
 }
 
-
-
-function ChangeColor() {
-
+export function ChangePenColor(colorname) {
+    canvasContext.strokeStyle = colorname
 }
