@@ -6,11 +6,12 @@ export const canvasContext = canvas.getContext("2d");
 SetCanvasToWindowSize();
 window.addEventListener('resize', ResizeCanvas);
 
-canvasContext.imageSmoothingEnabled = true
-
 function SetCanvasToWindowSize() {
+    canvasContext.canvas.imageSmoothingEnabled = true;
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
+    canvasContext.canvas.height = 3000;
+    canvasContext.canvas.width = 3000;
 }
 
 function ResizeCanvas() {
@@ -35,6 +36,9 @@ canvasContext.lineJoin = 'round'
 canvasContext.lineCap = 'round'
 
 
+//------------------------
+
+let pencolorname = '#000000';
 
 export function ClearCanvas() {
     canvasContext.clearRect(0,0,canvas.width,canvas.height)
@@ -45,8 +49,14 @@ export function ChangeToEraser() {
 }
 
 export function ChangeToPen() {
-    canvasContext.strokeStyle = '#000000'
+    canvasContext.strokeStyle = pencolorname
 }
+
+export function ChangePenColor(colorname) {
+    pencolorname = colorname
+    canvasContext.strokeStyle = colorname
+}
+//------------------------
 
 
 function startDrawing(event) {
@@ -68,6 +78,3 @@ function stopDrawing() {
     canvasContext.closePath();
 }
 
-export function ChangePenColor(colorname) {
-    canvasContext.strokeStyle = colorname
-}

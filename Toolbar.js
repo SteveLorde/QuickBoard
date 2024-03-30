@@ -17,7 +17,7 @@ const greenColorButton = document.getElementById('GreenColor')
 clearwhiteboardbutton.addEventListener('click', ClearCanvas)
 penButton.addEventListener('click', ChangeToPen)
 eraserButton.addEventListener('click', ChangeToEraser)
-quitButton.addEventListener('click', () => alert("QUIT TEST"))
+//quitButton.addEventListener('click', () => alert("QUIT TEST"))
 
 colorPickerButton.addEventListener('click', function() {
     if (colorSwatch.style.display === 'none') {
