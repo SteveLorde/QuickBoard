@@ -2,7 +2,7 @@
   "name": "whiteboardapp",
   "private": false,
   "version": "0.0.0",
-  "main": "dist/main.js",
+  "main": "electron/main.js",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,6 +17,7 @@
       "output": "dist_app"
     },
     "files": [
+      "electron/**/*",
       "dist/**/*"
     ],
     "win": {

@@ -1,4 +1,4 @@
-import {canvasContext,ChangeToEraser, ChangeToPen,ClearCanvas, ChangePenColor} from "./DrawingCanvas.js"
+import {canvasContext,ChangeToEraser, ChangeToPen,ClearCanvas, ChangePenColor, IncreaseStroke, DecreaseStroke} from "./DrawingCanvas.js"
 
 
 
@@ -8,6 +8,8 @@ const colorPickerButton = document.getElementById('ColorPickerButton');
 const penButton = document.getElementById('PenButton');
 const eraserButton = document.getElementById('EraserButton');
 const quitButton = document.getElementById('QuitButton')
+const decreaseStrokeButton = document.getElementById('DecraseStrokeSizeButton')
+const increaseStrokeButton = document.getElementById('IncraseStrokeSizeButton')
 
 const blackColorButton = document.getElementById('BlackColor')
 const redColorButton = document.getElementById('RedColor')
@@ -35,3 +37,5 @@ blueColorButton.addEventListener('click', () => ChangePenColor('blue') )
 greenColorButton.addEventListener('click', () => ChangePenColor('green') )
 
 
+decreaseStrokeButton.addEventListener('click', () => DecreaseStroke())
+increaseStrokeButton.addEventListener('click', () => IncreaseStroke())

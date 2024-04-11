@@ -56,6 +56,15 @@ export function ChangePenColor(colorname) {
     pencolorname = colorname
     canvasContext.strokeStyle = colorname
 }
+
+export function IncreaseStroke() {
+    canvasContext.lineWidth += 5;
+}
+
+export function DecreaseStroke() {
+    canvasContext.lineWidth -= 5;
+}
+
 //------------------------
 
 
