@@ -26,6 +26,13 @@
     background-size: cover;
 }
 
+#selectedColorViewer {
+    padding: 20px;
+    border-radius: 50px;
+    background-color: black;
+
+}
+
 .ColorSwatchContainer {
     position: relative;
     bottom: 60px;

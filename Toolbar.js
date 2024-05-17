@@ -11,6 +11,7 @@ const quitButton = document.getElementById('QuitButton')
 const decreaseStrokeButton = document.getElementById('DecraseStrokeSizeButton')
 const increaseStrokeButton = document.getElementById('IncraseStrokeSizeButton')
 
+const selectedColorViewer = document.getElementById('selectedColorViewer')
 const blackColorButton = document.getElementById('BlackColor')
 const redColorButton = document.getElementById('RedColor')
 const blueColorButton = document.getElementById('BlueColor')
@@ -31,10 +32,21 @@ colorPickerButton.addEventListener('click', function() {
 })
 
 
-blackColorButton.addEventListener('click', () => ChangePenColor('black') )
-redColorButton.addEventListener('click', () => ChangePenColor('red') )
-blueColorButton.addEventListener('click', () => ChangePenColor('blue') )
-greenColorButton.addEventListener('click', () => ChangePenColor('green') )
+blackColorButton.addEventListener('click', () => {
+    ChangePenColor('black')
+    selectedColorViewer.style.backgroundColor = "black"
+})
+redColorButton.addEventListener('click', () => {
+    ChangePenColor('red')
+    selectedColorViewer.style.backgroundColor = "red"
+})
+blueColorButton.addEventListener('click', () => {ChangePenColor('blue')
+    selectedColorViewer.style.backgroundColor = "blue"
+})
+greenColorButton.addEventListener('click', () => {
+    ChangePenColor('green')
+    selectedColorViewer.style.backgroundColor = "green"
+})
 
 
 decreaseStrokeButton.addEventListener('click', () => DecreaseStroke())
