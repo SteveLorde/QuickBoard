@@ -22,13 +22,12 @@ penButton.addEventListener('click', ChangeToPen)
 eraserButton.addEventListener('click', ChangeToEraser)
 //quitButton.addEventListener('click', () => alert("QUIT TEST"))
 
+colorPickerButton.addEventListener('blur',function () {
+    setTimeout(() => colorSwatch.style.display = 'none', 100)
+})
+
 colorPickerButton.addEventListener('click', function() {
-    if (colorSwatch.style.display === 'none') {
-        colorSwatch.style.display = 'block'
-    }
-    else {
-        colorSwatch.style.display = 'none'
-    }
+    colorSwatch.style.display = 'block'
 })
 
 
