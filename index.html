@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Quickboard</title>
       <script type="module" src="DrawingCanvas.js"></script>
       <script type="module" src="Toolbar.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -47,6 +47,9 @@
                 </div>
 
                 <div id="ToolbarBottom" class="Toolbar-Bottom gap-12 p-6 flex flex-row items-center justify-center">
+                    <!---Current Color--->
+                    <div id="CurrentColorElement"></div>
+
                     <div>
                         <button id="ClearWhiteBoardButton" class="ToolbarFlatButton">Clear</button>
                     </div>
@@ -62,8 +65,8 @@
                         </button></li>
                     </ul>
                     <div class="flex flex-row gap-3 items-center">
-                        <button id="DecraseStrokeSizeButton" class="p-2 bg-gray-400">-</button>
-                        <button id="IncraseStrokeSizeButton" class="p-2 bg-gray-400">+</button>
+                        <button id="DecraseStrokeSizeButton" class="p-2 bg-gray-200 rounded-3xl">-</button>
+                        <button id="IncraseStrokeSizeButton" class="p-2 bg-gray-200 rounded-3xl">+</button>
                     </div>
                 </div>
 

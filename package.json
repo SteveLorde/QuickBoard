@@ -5,6 +5,7 @@
   "main": "electron/main.js",
   "type": "module",
   "scripts": {
+    "start": "vite",
     "dev": "vite",
     "build": "vite build",
     "electron:build": "electron-builder",

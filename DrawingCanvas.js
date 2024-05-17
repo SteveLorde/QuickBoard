@@ -1,5 +1,6 @@
 const canvas = document.getElementById('DrawingCanvas');
 export const canvasContext = canvas.getContext("2d");
+const cursorImage = "public/UI_Icons/Drawing_Cursor.svg"
 
 //Canvas Display, Size and Window Resizing Properties
 //--------------------------------
@@ -38,6 +39,21 @@ canvasContext.lineCap = 'round'
 
 //------------------------
 
+let cursorSize = 20
+let strokeWidth = 2
+
+
+function UpdateCursor() {
+    const cursorHotspot = cursorSize / 2
+    let cursorStroke = `<circle cx="12" cy="12" r="10" stroke="black" stroke-width="${strokeWidth}" fill="transparent" />`
+    let cursor = `<svg xmlns="http://www.w3.org/2000/svg" width="${cursorSize}" height="${cursorSize}" viewBox="0 0 25 25">${cursorStroke}</svg>`
+    const blob = new Blob([cursor], { type: "image/svg+xml" });
+    const cursorURL = URL.createObjectURL(blob);
+    canvas.style.cursor = `url(${cursorURL}) ${cursorHotspot} ${cursorHotspot}, auto`
+}
+
+UpdateCursor()
+
 let pencolorname = '#000000';
 
 export function ClearCanvas() {
@@ -59,10 +75,16 @@ export function ChangePenColor(colorname) {
 
 export function IncreaseStroke() {
     canvasContext.lineWidth += 5;
+    //strokeWidth += 20
+    cursorSize += 10;
+    UpdateCursor();
 }
 
 export function DecreaseStroke() {
     canvasContext.lineWidth -= 5;
+    //strokeWidth -= 20
+    cursorSize -= 10;
+    UpdateCursor();
 }
 
 //------------------------

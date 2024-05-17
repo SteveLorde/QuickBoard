@@ -5,7 +5,6 @@
 
 #DrawingCanvas {
     z-index: 0;
-    cursor: url("public/UI_Icons/Drawing_Cursor_Small.png") 8 9, auto;
 }
 
 #QuitButton {
