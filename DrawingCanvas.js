@@ -19,6 +19,9 @@ function ResizeCanvas() {
 
 }
 
+canvasContext.fillStyle = 'white'
+canvasContext.fillRect(0, 0, canvas.width, canvas.height)
+
 //Drawing
 //-------
 let isDrawing = false;
