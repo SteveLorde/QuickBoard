@@ -23,31 +23,26 @@ function ResizeCanvas() {
 //-------
 let isDrawing = false;
 
-
-
 canvas.addEventListener("mousedown", startDrawing);
 canvas.addEventListener("mousemove", draw);
 canvas.addEventListener("mouseup", stopDrawing);
 canvas.addEventListener("mouseout", stopDrawing);
-
 
 canvasContext.strokeStyle = 'black'
 canvasContext.lineWidth = 5
 canvasContext.lineJoin = 'round'
 canvasContext.lineCap = 'round'
 
-
 //------------------------
 
 let cursorSize = 20
 let strokeWidth = 2
 
-
 function UpdateCursor() {
     const cursorHotspot = cursorSize / 2
     let cursorStroke = `<circle cx="12" cy="12" r="10" stroke="black" stroke-width="${strokeWidth}" fill="transparent" />`
     let cursor = `<svg xmlns="http://www.w3.org/2000/svg" width="${cursorSize}" height="${cursorSize}" viewBox="0 0 25 25">${cursorStroke}</svg>`
-    const blob = new Blob([cursor], { type: "image/svg+xml" });
+    const blob = new Blob([cursor], {type: "image/svg+xml"});
     const cursorURL = URL.createObjectURL(blob);
     canvas.style.cursor = `url(${cursorURL}) ${cursorHotspot} ${cursorHotspot}, auto`
 }
@@ -57,7 +52,7 @@ UpdateCursor()
 let pencolorname = '#000000';
 
 export function ClearCanvas() {
-    canvasContext.clearRect(0,0,canvas.width,canvas.height)
+    canvasContext.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 export function ChangeToEraser() {
@@ -88,7 +83,6 @@ export function DecreaseStroke() {
 }
 
 //------------------------
-
 
 function startDrawing(event) {
     event.preventDefault()
